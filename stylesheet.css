@@ -1,0 +1,385 @@
+body{
+    margin: 0px;
+}
+
+/*classes*/
+
+.taille100
+{
+	width: 100%
+}
+
+.margeg20
+{
+	margin-left: 20px;
+}
+
+.gris
+{
+	background: rgb(246, 246, 246);
+}
+
+.violet
+{
+	color: rgb(169, 93, 220);
+}
+
+.cviolet
+{
+	color: #9356DC;
+}
+
+.rose
+{
+	color: rgb(227, 112, 218);
+}
+
+.crose
+{
+	color: #FF79DA;
+}
+
+.cvert
+{
+	color: #99E2D0;
+}
+
+.noir
+{
+	background: rgb(53, 53, 53);
+}
+
+.gras
+{
+	font-weight: bold
+}
+
+.regulier
+{
+	font-weight: normal;
+}
+
+.taille95
+{
+	font-size: 1em;
+}
+
+.padbot50
+{
+	padding-bottom: 50px;
+}
+
+.padbot30
+{
+	padding-bottom: 30px;
+}
+
+.padleft20
+{
+	padding-left: 20px;
+}
+
+.padrigth20
+{
+	padding-right: 20px;
+}
+
+.padtop20
+{
+	padding-top: 20px;
+}
+
+.grandt
+{
+	padding: 20px 0px 5px 30px;
+	font-size: 1.4em;
+	border: none;
+	font-weight: bold;	
+}
+
+
+/*fin des classes*/
+
+/*spéciation*/
+
+
+{
+	font-size: 1em;
+}
+
+{
+	font-size: 0.95em;
+}
+
+{
+	font-weight: bold;
+} 
+
+
+{
+	font-weight: normal;
+}
+
+h1, table, p
+{
+	font-family: 'Roboto', sans-serif;
+}
+
+{
+  color: black;
+  text-decoration: none;
+} 
+
+{
+	color: white;	
+}
+
+{
+	overflow: hidden;
+	text-overflow: ellipsis;		
+}
+
+/*fin spéciation*/
+
+/* début keyframe */
+
+@keyframes animation1
+{
+	0%{
+		opacity: 0;	
+	}
+	100%{
+		opacity: 1;		
+	}
+}
+
+@keyframes animation2
+{
+	0%{
+		opacity: 1;
+		transform: rotate(0);
+	}
+	10%{
+		opacity: 0.8;
+	}
+	20%{
+		opacity: 1;
+	}
+	30%{
+		opacity: 0.8;
+	}
+	40%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0.8;
+	}
+	60%{
+		opacity: 0.6;
+	}
+	70%{
+		opacity: 0.8;
+	}
+	80%{
+		opacity: 0.1;			
+	}
+	90%{
+		opacity: 0.6;
+	}
+	100%{
+		opacity: 0;
+		transform: rotate(2turn)		
+	}
+}
+
+/* fin keyframe */
+
+/* début du code */
+
+/* début de la page accueil */
+
+/* début du header */
+
+header, footer{
+    background-color: cornflowerblue;
+    margin-bottom: 30px;
+    height: 200px;
+    padding-top: 20px;
+    display: flex;
+}
+
+
+div#chargement, div#argent, div#transfert, div#programme, div#minage{
+    font-size: 3em;
+    color: rgb(57, 93, 192);
+    background-color: white;
+    border-radius: 40px;
+    width: 80px;
+    height: 67px;
+    margin: auto;
+    text-align: center;
+    padding-top: 13px;
+    transition-property: all;
+    transition-duration: 1000ms;   
+    transform: scale(0.8);
+    box-shadow: 0 0 10px 4px #FFFFFF;
+}
+
+div#chargement:hover, div#argent:hover, div#transfert:hover, div#programme:hover, div#minage:hover{
+    transform: scale(1) rotate(1turn);
+    color: turquoise;
+    box-shadow: 0 0 10px 4px rgb(57, 93, 192);
+    
+}
+
+div#chargement:active, div#argent:active, div#transfert:active, div#programme:active, div#minage:active{
+    box-shadow: inset 0 0 10px 4px rgb(57, 93, 192);
+    color:  rgb(57, 93, 192);
+}
+
+div#chargement:active i, div#transfert:active i, div#argent:active i, div#programme:active i, div#minage:active i{
+    transition: all;
+    transition-duration: 0ms;
+    transform: scale(0.8);
+}
+
+/* fin du header */
+
+/* début du body */
+
+/* début du nav */
+
+#sectionwallet{
+    padding-left: 20px;
+    height: 40px;
+}
+
+nav{
+    position: fixed;
+    width: 74px;
+    height: 74px;
+    background-color: gold;
+    border-radius: 20px;
+    padding-top: 16px;
+    padding-left: 24px;
+    color: white;
+    transition: 1000ms;
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0px 0px 10px 5px yellow;
+    display: flex;
+}
+
+nav div#wallet i{
+    transition: 1000ms;
+    transform: scale(1);
+    font-size: 3em;
+}
+
+nav:active i.wallet1, nav i.wallet2, div#wallettext{
+    display: none;
+}
+
+nav:hover{
+    opacity: 0.7;
+    box-shadow: 0px 0px 10px 0px yellow;
+    border-radius: 30px;
+    transform: scale(0.9);
+    width: 400px;
+}
+
+nav:hover div#wallet i{
+    transform: scale(1) rotate(1turn);
+}
+
+nav:active{
+    transition: 500ms;
+    box-shadow: inset 0px 0px 10px 5px goldenrod;   
+}
+
+nav:hover div#wallettext{
+    display: block;
+}
+
+nav:active i.wallet2{
+    display: inline;
+}
+
+nav div#wallettext{
+    margin-top: -10px;
+    padding-left: 50px;
+}
+
+nav div#wallettext p{
+    font-size: 1.1em;
+    color: white;
+}
+
+nav div p{
+    margin: 0;
+
+}
+
+nav div p i{
+    padding-left: 5px;
+}
+
+/*fin du nav */
+
+body section{
+    padding-top: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 3em;
+}
+
+table
+{
+    margin: auto;
+    border: solid 4px black;
+    border-radius: 10px;
+    background-color: silver;
+    padding: 10px;
+    border-collapse: collapse;
+    
+}
+
+caption{
+    font-size: 1.5em;
+    color: rgb(57, 93, 192);
+}
+
+th{
+    border: solid 2px black;
+    padding: 10px;
+}
+
+
+td{
+    font-size: 1em;
+    border: solid 2px black;
+    padding: 10px;   
+}
+
+tr.plus{
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    transition-property: all;
+    transition-duration: 500ms;
+}
+
+tr.plus:hover{
+    height: 50px;
+    background-color: chartreuse;
+    font-size: 3em;
+}
+
+footer{
+    margin-bottom: -35px;
+    padding-top: 10px;
+    margin-top: 60px;
+}
