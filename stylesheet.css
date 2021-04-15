@@ -102,49 +102,15 @@ body{
 
 /*spéciation*/
 
-
-{
-	font-size: 1em;
-}
-
-{
-	font-size: 0.95em;
-}
-
-{
-	font-weight: bold;
-} 
-
-
-{
-	font-weight: normal;
-}
-
-h1, table, p
-{
-	font-family: 'Roboto', sans-serif;
-}
-
-{
-  color: black;
-  text-decoration: none;
-} 
-
-{
-	color: white;	
-}
-
-{
-	overflow: hidden;
-	text-overflow: ellipsis;		
+p, h1, table{
+    font-family: 'Roboto', sans-serif;
 }
 
 /*fin spéciation*/
 
 /* début keyframe */
 
-@keyframes animation1
-{
+@keyframes animation1{
 	0%{
 		opacity: 0;	
 	}
@@ -153,8 +119,7 @@ h1, table, p
 	}
 }
 
-@keyframes animation2
-{
+@keyframes animation2{
 	0%{
 		opacity: 1;
 		transform: rotate(0);
@@ -192,6 +157,67 @@ h1, table, p
 	}
 }
 
+@keyframes animation3{
+	0%{
+		opacity: 0;
+	}
+	35%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes issou {
+    0%{
+        color: white;
+        transform: translateX(0px) translateY(0px);
+    }
+    4%{
+        transform: translateX(0px) translateY(5px);
+    }
+    8%{
+        transform: translateX(0px) translateY(0px);
+    }
+    12%{
+        transform: translateX(0px) translateY(5px);
+        color: red;   
+    }
+    16%{
+        transform: translateX(0px) translateY(0px);
+    }
+    20%{
+        transform: translateX(0px) translateY(5px);     
+    }
+    24%{
+        transform: translateX(0px) translateY(0px);
+    }
+    28%{
+        transform: translateX(0px) translateY(5px);
+    }
+    32%{
+        transform: translateX(0px) translateY(0px);
+    }
+    36%{
+        transform: translateX(0px) translateY(5px);
+    }
+    40%{
+        color: rgb(73, 1, 1);
+        transform: translateX(0px) translateY(0px);
+    }
+    80%{
+        transition-timing-function : cubic-bezier(0.075, 0.82, 0.165, 1);      
+        color: red;
+        transform: translateX(-40px) translateY(0px);       
+    }
+    100%{
+        color: red;
+        transform: translateX(350px) translateY(0px);      
+    }
+}
+
+
 /* fin keyframe */
 
 /* début du code */
@@ -200,12 +226,13 @@ h1, table, p
 
 /* début du header */
 
-header, footer{
+header{
     background-color: cornflowerblue;
     margin-bottom: 30px;
     height: 200px;
     padding-top: 20px;
     display: flex;
+    box-shadow:inset 0 -10px 15px -7px rgba(4,3,75,1);
 }
 
 
@@ -276,12 +303,12 @@ nav div#wallet i{
     font-size: 3em;
 }
 
-nav:active i.wallet1, nav i.wallet2, div#wallettext{
+nav:active i.wallet1, nav i.wallet2,nav div#wallettext{
     display: none;
 }
 
 nav:hover{
-    opacity: 0.7;
+    opacity: 1;
     box-shadow: 0px 0px 10px 0px yellow;
     border-radius: 30px;
     transform: scale(0.9);
@@ -297,34 +324,76 @@ nav:active{
     box-shadow: inset 0px 0px 10px 5px goldenrod;   
 }
 
-nav:hover div#wallettext{
-    display: block;
-}
-
 nav:active i.wallet2{
     display: inline;
 }
 
-nav div#wallettext{
+nav:hover div#wallettext{
+    display: block;
+    font-size: 1.1em;
     margin-top: -10px;
     padding-left: 50px;
+    width: 300px;
+    animation: animation3 1000ms;
 }
-
-nav div#wallettext p{
-    font-size: 1.1em;
-    color: white;
-}
-
-nav div p{
+nav:hover div#wallettext p{
     margin: 0;
-
+    margin-bottom: 5px;
 }
 
 nav div p i{
     padding-left: 5px;
+    padding-right: 5px;
 }
 
 /*fin du nav */
+
+section#sectionwallet div#issou{
+    font-size: 2.5em;
+    position: absolute;
+    right: 5%;
+    background-color: white;
+    color: white;
+    background-color: rgb(32, 192, 11);
+    border: solid rgb(4, 100, 4) 5px;
+    box-shadow: 0px 0px 10px 5px green;
+    border-radius: 20px;
+    height: 60px;
+    width: 300px;
+    transform: scale(1);
+    transition: box-shadow;
+    transition-duration: 600ms; 
+}
+
+section#sectionwallet div#issou:hover{
+    box-shadow: 0px 0px 15px 10px rgb(40, 136, 40);
+}
+
+body section#sectionwallet div#issou:hover p i{
+    animation: issou;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
+
+
+
+section#sectionwallet div#issou:active{
+    transform: scale(0.9);
+    transition: all;
+    transition-duration: 100ms;
+}
+
+
+
+section#sectionwallet div#issou p{
+    margin-left: 60px;
+    margin-top: 7px;
+    font-family: 'Lobster', cursive;
+}
+
+section#sectionwallet div#issou p i{
+    margin-right: 20px;
+}
 
 body section{
     padding-top: 20px;
@@ -342,8 +411,7 @@ table
     border-radius: 10px;
     background-color: silver;
     padding: 10px;
-    border-collapse: collapse;
-    
+    border-collapse: collapse;    
 }
 
 caption{
@@ -376,9 +444,22 @@ tr.plus:hover{
     height: 50px;
     background-color: chartreuse;
     font-size: 3em;
+    color: white;
+}
+
+tr.plus:active{
+    box-shadow: inset 0px 0px 10px 6px chartreuse;
+    color: chartreuse;
+    background-color: white;
 }
 
 footer{
+
+    background-color: cornflowerblue;
+    margin-bottom: 30px;
+    height: 200px;
+    padding-top: 20px;
+    display: flex;   
     margin-bottom: -35px;
     padding-top: 10px;
     margin-top: 60px;
